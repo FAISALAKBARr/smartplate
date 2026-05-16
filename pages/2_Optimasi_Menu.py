@@ -15,12 +15,12 @@ import time
 from datetime import datetime
 from typing import Dict
 
-st.set_page_config(
-    page_title="Optimasi Menu – SmartPlate Year 2",
-    page_icon="🥗",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+# st.set_page_config(
+#     page_title="Optimasi Menu – SmartPlate Year 2",
+#     page_icon="🥗",
+#     layout="wide",
+#     initial_sidebar_state="expanded"
+# )
 
 # ==============================================================================
 # CSS — konsisten dengan SmartPlate (Year 1)
