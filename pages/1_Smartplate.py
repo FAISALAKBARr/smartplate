@@ -30,8 +30,8 @@ st.set_page_config(
 # CONFIGURATION
 # ==============================================================================
 
-MODEL_ID             = '1E1F1kJ3v_dc7R8ffyXiWmWOTLodjoaAT'  # C2 large + auhg
-MODEL_PATH           = 'best_exp_C2_l_aug.pt'
+MODEL_ID             = '1BesiFj-R5qQ--z0-_2kD8ZvNcbdGkppY'  # ⚠️ CHANGE THIS
+MODEL_PATH           = 'best.pt'
 CONFIDENCE_THRESHOLD = 0.25
 IOU_THRESHOLD        = 0.45
 
@@ -143,22 +143,22 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     gap: 12px; margin-bottom: 0.5rem;
 }
 .guide-card {
-    background: #f8fdf4; border: 1.5px solid #d4e8c2;
+    background: rgba(45,122,27,0.07); border: 1.5px solid rgba(45,122,27,0.25);
     border-radius: 12px; padding: 14px 16px;
     display: flex; align-items: flex-start; gap: 10px;
 }
 .guide-card-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
-.guide-card-text { font-size: 0.83rem; color: #3a5c2a; line-height: 1.45; }
-.guide-card-text strong { display: block; color: #1a3a0a; margin-bottom: 2px; font-size: 0.86rem; }
+.guide-card-text { font-size: 0.83rem; color: inherit; opacity: 0.85; line-height: 1.45; }
+.guide-card-text strong { display: block; color: inherit; opacity: 1; margin-bottom: 2px; font-size: 0.86rem; }
 
 /* ── Disclaimer card ── */
 .disclaimer-card {
-    background: #fffbf0; border: 1.5px solid #f5d87a;
+    background: rgba(212,160,23,0.1); border: 1.5px solid rgba(212,160,23,0.35);
     border-left: 4px solid #d4a017; border-radius: 10px;
-    padding: 12px 16px; margin-top: 8px; font-size: 0.82rem; color: #5a4a10;
-    line-height: 1.5;
+    padding: 12px 16px; margin-top: 8px; font-size: 0.82rem; color: inherit;
+    line-height: 1.5; opacity: 0.9;
 }
-.disclaimer-card strong { color: #3a2e00; }
+.disclaimer-card strong { color: inherit; }
 
 /* ── Balance Score Banner ── */
 .score-banner {
@@ -185,21 +185,21 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
 /* ── Metric Cards ── */
 .metric-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0.8rem 0; }
 .metric-card {
-    background: white; border: 1.5px solid #e8e8e8;
+    background: rgba(255,255,255,0.05); border: 1.5px solid rgba(128,128,128,0.2);
     border-radius: 12px; padding: 14px 16px; text-align: center;
 }
-.metric-card .mc-label { font-size: 0.78rem; color: #888; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
-.metric-card .mc-value { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: #1a1a1a; line-height: 1.1; margin: 4px 0; }
-.metric-card .mc-sub { font-size: 0.78rem; color: #999; }
+.metric-card .mc-label { font-size: 0.78rem; color: inherit; opacity: 0.6; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+.metric-card .mc-value { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: inherit; line-height: 1.1; margin: 4px 0; }
+.metric-card .mc-sub { font-size: 0.78rem; color: inherit; opacity: 0.55; }
 
 /* ── Section Headers ── */
 .section-title {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.25rem; color: #3a8a2a; margin: 1.4rem 0 0.7rem;
-    padding-bottom: 6px; border-bottom: 2px solid #5aaa3a;
+    font-size: 1.25rem; color: #5aaa3a; margin: 1.4rem 0 0.7rem;
+    padding-bottom: 6px; border-bottom: 2px solid rgba(90,170,58,0.45);
 }
 
-/* ── Chart Card (always light background so matplotlib labels are readable) ── */
+/* ── Chart Card ── */
 .chart-card {
     background: #ffffff; border-radius: 14px;
     padding: 16px 8px 8px;
@@ -211,37 +211,14 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     font-size: 1rem; color: #1a1a1a; margin-bottom: 4px;
 }
 
-/* ── Dark-mode overrides ── */
-@media (prefers-color-scheme: dark) {
-    .section-title { color: #7acc55; border-bottom-color: #4a8a2a; }
-    .guide-card { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
-    .guide-card-text { color: #c8e8a8; }
-    .guide-card-text strong { color: #e8f8d0; }
-    .disclaimer-card { background: rgba(245,216,122,0.12); border-color: rgba(245,216,122,0.3); color: #e0c870; }
-    .disclaimer-card strong { color: #f0e090; }
-    .minuman-box { background: rgba(74,144,217,0.12); border-color: rgba(74,144,217,0.35); }
-    .minuman-box h4 { color: #90c8f0; }
-    .minuman-box p { color: #a8d0f0; }
-    .missing-box { background: rgba(245,195,50,0.1); border-color: rgba(245,195,50,0.3); color: #e0c060; }
-    .missing-box strong { color: #f0d070; }
-    .metric-card { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1); }
-    .metric-card .mc-label { color: #aaa; }
-    .metric-card .mc-value { color: #f0f0f0; }
-    .metric-card .mc-sub { color: #888; }
-    .err-box { background: rgba(229,57,53,0.12); border-color: rgba(229,57,53,0.3); color: #f0a0a0; }
-    .akg-kurang   { background: rgba(192,57,43,0.2);  color: #ff8a80; }
-    .akg-cukup    { background: rgba(39,174,96,0.2);  color: #69f0ae; }
-    .akg-berlebih { background: rgba(230,126,34,0.2); color: #ffcc80; }
-}
-
 /* ── Minuman Info Box ── */
 .minuman-box {
-    background: linear-gradient(135deg, #e8f4fd 0%, #d6ecf9 100%);
-    border: 1.5px solid #90caf9; border-left: 4px solid #1976d2;
+    background: rgba(25,118,210,0.1); border: 1.5px solid rgba(25,118,210,0.35);
+    border-left: 4px solid #1976d2;
     border-radius: 12px; padding: 14px 18px; margin: 0.8rem 0;
 }
-.minuman-box h4 { color: #0d47a1; margin: 0 0 6px; font-size: 0.95rem; }
-.minuman-box p  { color: #1a4a7a; margin: 0; font-size: 0.83rem; line-height: 1.5; }
+.minuman-box h4 { color: #4a9fe0; margin: 0 0 6px; font-size: 0.95rem; }
+.minuman-box p  { color: inherit; opacity: 0.85; margin: 0; font-size: 0.83rem; line-height: 1.5; }
 .minuman-badge {
     display: inline-block; background: #1976d2; color: white;
     border-radius: 20px; padding: 2px 10px; font-size: 0.78rem;
@@ -250,30 +227,30 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
 
 /* ── Missing / Warning ── */
 .missing-box {
-    background: #fff8e1; border: 1.5px solid #ffcc02;
+    background: rgba(245,158,11,0.1); border: 1.5px solid rgba(245,158,11,0.35);
     border-left: 4px solid #f59e0b; border-radius: 10px;
-    padding: 12px 16px; font-size: 0.84rem; color: #5a3e00;
+    padding: 12px 16px; font-size: 0.84rem; color: inherit;
 }
-.missing-box strong { color: #3a2500; }
+.missing-box strong { color: inherit; }
 
 /* ── Error Box ── */
 .err-box {
-    background: #fdf0f0; border: 1.5px solid #f5c2c2;
+    background: rgba(229,57,53,0.1); border: 1.5px solid rgba(229,57,53,0.35);
     border-left: 4px solid #e53935; border-radius: 10px;
-    padding: 14px 18px; font-size: 0.85rem; color: #4a1010;
+    padding: 14px 18px; font-size: 0.85rem; color: inherit;
 }
 
 /* ── AKG Row ── */
 .akg-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
-.akg-label { width: 110px; font-size: 0.85rem; font-weight: 500; color: #333; flex-shrink: 0; }
-.akg-detail { font-size: 0.78rem; color: #888; width: 110px; flex-shrink: 0; text-align: right; }
+.akg-label { width: 110px; font-size: 0.85rem; font-weight: 500; color: inherit; flex-shrink: 0; }
+.akg-detail { font-size: 0.78rem; color: inherit; opacity: 0.6; width: 110px; flex-shrink: 0; text-align: right; }
 .akg-status {
     font-size: 0.75rem; font-weight: 700; padding: 2px 10px;
     border-radius: 20px; white-space: nowrap;
 }
-.akg-kurang  { background: #fde8e8; color: #c0392b; }
-.akg-cukup   { background: #e8f5e9; color: #27ae60; }
-.akg-berlebih{ background: #fff3e0; color: #e67e22; }
+.akg-kurang  { background: rgba(192,57,43,0.18);  color: #e57373; }
+.akg-cukup   { background: rgba(39,174,96,0.18);  color: #4caf82; }
+.akg-berlebih{ background: rgba(230,126,34,0.18); color: #ffb74d; }
 
 /* ── Sidebar ── */
 .sidebar-section { margin: 0.8rem 0; }
@@ -307,13 +284,21 @@ div[data-testid="stExpander"] { border: 1.5px solid #d4e8c2 !important; border-r
 # CORE FUNCTIONS
 # ==============================================================================
 
+SUPPORTED_EXTENSIONS = {'jpg', 'jpeg', 'png', 'heic', 'heif', 'webp', 'bmp', 'tiff', 'tif'}
+
+
 def safe_open_image(file) -> Image.Image:
     """
     Buka gambar dari file upload, dengan dukungan HEIC/HEIF (iPhone).
     Selalu mengembalikan PIL Image dalam mode RGB.
     """
+    # Validasi ekstensi
+    ext = file.name.rsplit('.', 1)[-1].lower() if '.' in file.name else ''
+    if ext and ext not in SUPPORTED_EXTENSIONS:
+        st.error(f"❌ Format .{ext} tidak didukung. Gunakan: JPG, PNG, HEIC, WEBP.")
+        st.stop()
+
     img = Image.open(file)
-    # HEIC kadang dikembalikan sebagai mode 'RGBA' atau mode lain — normalkan ke RGB
     if img.mode not in ('RGB',):
         img = img.convert('RGB')
     return img
@@ -333,7 +318,7 @@ def estimate_weight_from_mask(mask, class_name, pixel_to_cm):
     Formula: Berat (g) = Area_2D (cm²) × Tinggi_asumsi (cm) × Densitas (g/cm³)
     Referensi: Fang et al. (2011); Pouladzadeh et al. (2014)
     """
-    HEIGHT_CM = {'buah': 3.5, 'karbohidrat': 2.0, 'minuman': 10.0, 'protein': 0.75, 'sayur': 1.25}
+    HEIGHT_CM = {'buah': 3.5, 'karbohidrat': 2.5, 'minuman': 10.0, 'protein': 3.0, 'sayur': 2.0}
     area_pixels = np.sum(mask > 0)
     area_cm2    = area_pixels * (pixel_to_cm ** 2)
     volume_cm3  = area_cm2 * HEIGHT_CM.get(class_name, 2.5)
@@ -355,13 +340,12 @@ def calculate_nutrition_from_grams(class_name, weight_grams):
 def detect_plate_circle(image_np):
     """
     Hough Circle Transform untuk kalibrasi piring dengan validasi Canny edge.
-    Dua level kepercayaan: ≥60 = pakai circle, 45-60 = pakai fallback, <45 = tolak.
+    Returns: (pixel_to_cm, plate_detected, circle_info)
+      circle_info = (cx, cy, r) jika terdeteksi, None jika tidak.
     Referensi: Ballard (1981); Puri et al. (2009)
-    Sekarang mengembalikan tuple (pixel_to_cm, plate_detected, circle_info)
-    di mana circle_info = (cx, cy, r) jika terdeteksi, atau None jika tidak.
     """
     PLATE_DIAMETER_CM = 22.0
-    h, w = image_np.shape[:2]
+    h, w    = image_np.shape[:2]
     max_dim = max(h, w)
     min_dim = min(h, w)
 
@@ -377,24 +361,24 @@ def detect_plate_circle(image_np):
     )
 
     if circles is not None:
-        edges = cv2.Canny(blurred, 50, 150)
+        edges      = cv2.Canny(blurred, 50, 150)
         candidates = np.round(circles[0]).astype(int)
 
         for cx, cy, r in sorted(candidates, key=lambda x: -x[2]):
+            # Validasi: pusat harus di area tengah frame
             if not (w * 0.15 < cx < w * 0.85 and h * 0.15 < cy < h * 0.85):
                 continue
-
+            # Validasi: kekuatan tepi melingkar via Canny
             angles = np.linspace(0, 2 * np.pi, 120)
             xs = np.clip((cx + r * np.cos(angles)).astype(int), 0, w - 1)
             ys = np.clip((cy + r * np.sin(angles)).astype(int), 0, h - 1)
             edge_strength = float(np.mean(edges[ys, xs]))
 
             if edge_strength >= 45:
-                pixel_to_cm = PLATE_DIAMETER_CM / (r * 2)
-                return pixel_to_cm, True, (int(cx), int(cy), int(r))
+                return PLATE_DIAMETER_CM / (r * 2), True, (int(cx), int(cy), int(r))
 
-    pixel_to_cm = PLATE_DIAMETER_CM / (max_dim * 0.70)
-    return pixel_to_cm, False, None
+    # Fallback: anggap piring memenuhi 70% dimensi terpanjang frame
+    return PLATE_DIAMETER_CM / (max_dim * 0.70), False, None
 
 
 @st.cache_resource
@@ -457,7 +441,7 @@ def process_segmentation_results(image, results, conf_threshold):
             else:
                 food_detections.append(record)
 
-            # Draw overlay
+            # Draw segmentation overlay
             color   = COLORS.get(class_name, (128, 128, 128))
             overlay = np.zeros_like(img_array)
             overlay[mask_rsz > 0.5] = color
@@ -469,76 +453,33 @@ def process_segmentation_results(image, results, conf_threshold):
             cv2.putText(annotated, lbl, (x1, y1 - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
 
-    # ── Visualisasi HCT ────────────────────────────────────────────────────────
-    if plate_detected and circle_info is not None:
+    # ── Visualisasi lingkaran HCT (digambar PALING AKHIR agar terlihat jelas) ──
+    if circle_info is not None:
         cx, cy, r = circle_info
-        h_img, w_img = annotated.shape[:2]
+        RING_COLOR = (0, 210, 255)    # kuning-cyan terang, kontras di semua latar
 
-        # Lingkaran utama: putih solid
-        cv2.circle(annotated, (cx, cy), r, (255, 255, 255), 3)
-        # Lingkaran utama: overlay hijau semi-transparan tipis
-        ring_overlay = annotated.copy()
-        cv2.circle(ring_overlay, (cx, cy), r, (80, 220, 100), 6)
-        annotated = cv2.addWeighted(annotated, 0.6, ring_overlay, 0.4, 0)
+        # Lingkaran utama (batas piring)
+        cv2.circle(annotated, (cx, cy), r,     RING_COLOR, 3)
+        # Lingkaran dalam tipis sebagai referensi visual
+        cv2.circle(annotated, (cx, cy), max(r - 10, r // 2), RING_COLOR, 1)
+        # Crosshair titik pusat
+        arm = 14
+        cv2.line(annotated, (cx - arm, cy), (cx + arm, cy), RING_COLOR, 2)
+        cv2.line(annotated, (cx, cy - arm), (cx, cy + arm), RING_COLOR, 2)
+        cv2.circle(annotated, (cx, cy), 5, RING_COLOR, -1)
 
-        # Crosshair di pusat piring
-        cross_len = max(12, r // 8)
-        cv2.line(annotated, (cx - cross_len, cy), (cx + cross_len, cy), (255, 255, 255), 2)
-        cv2.line(annotated, (cx, cy - cross_len), (cx, cy + cross_len), (255, 255, 255), 2)
-
-        # Garis diameter horizontal (putus-putus, abu-abu)
-        gap, seg = 14, 22
-        for x_start in range(cx - r, cx + r, gap + seg):
-            x_end = min(x_start + seg, cx + r)
-            cv2.line(annotated, (x_start, cy), (x_end, cy), (200, 200, 200), 1)
-
-        # Label skala di bagian bawah lingkaran
-        scale_text = f"Ø 22 cm  |  {pixel_to_cm*10:.3f} mm/px"
-        font       = cv2.FONT_HERSHEY_SIMPLEX
-        font_scale = max(0.45, min(0.7, w_img / 1000))
-        thickness  = 1
-        (tw, th), _ = cv2.getTextSize(scale_text, font, font_scale, thickness)
-
-        label_x = cx - tw // 2
-        label_y = cy + r + th + 10
-        label_y = min(label_y, h_img - 6)
-
-        # Background pill untuk label
-        pad = 6
+        # Label dengan background gelap agar terbaca di semua gambar
+        label      = "Piring terdeteksi (22 cm)"
+        font, scale, thick = cv2.FONT_HERSHEY_SIMPLEX, 0.55, 2
+        (tw, th), _ = cv2.getTextSize(label, font, scale, thick)
+        lx = max(4, cx - tw // 2)
+        ly = max(th + 10, cy - r - 10)
         cv2.rectangle(annotated,
-                      (label_x - pad, label_y - th - pad),
-                      (label_x + tw + pad, label_y + pad),
-                      (30, 30, 30), -1)
-        cv2.rectangle(annotated,
-                      (label_x - pad, label_y - th - pad),
-                      (label_x + tw + pad, label_y + pad),
-                      (80, 220, 100), 1)
-        cv2.putText(annotated, scale_text,
-                    (label_x, label_y),
-                    font, font_scale, (80, 220, 100), thickness, cv2.LINE_AA)
+                      (lx - 5, ly - th - 5), (lx + tw + 5, ly + 5),
+                      (0, 0, 0), -1)
+        cv2.putText(annotated, label, (lx, ly), font, scale, RING_COLOR, thick)
 
-        # Badge "✓ Piring Terdeteksi" di pojok kiri atas
-        badge_text = "Piring: terdeteksi HCT"
-        bfont_scale = max(0.4, min(0.6, w_img / 1100))
-        (bw, bh), _ = cv2.getTextSize(badge_text, font, bfont_scale, 1)
-        cv2.rectangle(annotated, (8, 8), (bw + 20, bh + 18), (30, 30, 30), -1)
-        cv2.rectangle(annotated, (8, 8), (bw + 20, bh + 18), (80, 220, 100), 1)
-        cv2.putText(annotated, badge_text, (14, bh + 12),
-                    font, bfont_scale, (80, 220, 100), 1, cv2.LINE_AA)
-
-    else:
-        # Piring tidak terdeteksi → tampilkan badge fallback
-        h_img, w_img = annotated.shape[:2]
-        badge_text  = "Piring: fallback 70%"
-        font        = cv2.FONT_HERSHEY_SIMPLEX
-        bfont_scale = max(0.4, min(0.6, w_img / 1100))
-        (bw, bh), _ = cv2.getTextSize(badge_text, font, bfont_scale, 1)
-        cv2.rectangle(annotated, (8, 8), (bw + 20, bh + 18), (30, 30, 30), -1)
-        cv2.rectangle(annotated, (8, 8), (bw + 20, bh + 18), (200, 160, 30), 1)
-        cv2.putText(annotated, badge_text, (14, bh + 12),
-                    font, bfont_scale, (200, 160, 30), 1, cv2.LINE_AA)
-
-    return annotated, food_detections, minuman_detections, pixel_to_cm, plate_detected, circle_info
+    return annotated, food_detections, minuman_detections, pixel_to_cm, plate_detected
 
 
 def analyze_nutrition_balance(food_detections, user_type):
@@ -963,14 +904,14 @@ def show_data_assumptions():
             tinggi_rows = [
                 {'Kategori': '🍎 Buah',        'Tinggi Asumsi (cm)': 3.5,
                  'Alasan': 'Buah bulat berukuran sedang (pepaya, mangga, pisang)'},
-                {'Kategori': '🍚 Karbohidrat',  'Tinggi Asumsi (cm)': 2.0,   # ← ubah dari 2.5
-                 'Alasan': 'Nasi disajikan rata di piring, ketebalan empiris ~2 cm'},
+                {'Kategori': '🍚 Karbohidrat',  'Tinggi Asumsi (cm)': 2.5,
+                 'Alasan': 'Nasi/mie disajikan rata di piring, ketebalan sedang'},
                 {'Kategori': '🥤 Minuman',      'Tinggi Asumsi (cm)': 10.0,
                  'Alasan': 'Tinggi gelas/wadah minuman standar'},
-                {'Kategori': '🍗 Protein',      'Tinggi Asumsi (cm)': 0.75,  # ← ubah dari 3.0
-                 'Alasan': 'Lauk tipis (tempe goreng, dll.) ~0,5–1 cm; hasil kalibrasi empiris'},
-                {'Kategori': '🥗 Sayur',        'Tinggi Asumsi (cm)': 1.25,  # ← ubah dari 2.0
-                 'Alasan': 'Sayur tumis disajikan pipih; hasil kalibrasi empiris ~1–1,5 cm'},
+                {'Kategori': '🍗 Protein',      'Tinggi Asumsi (cm)': 3.0,
+                 'Alasan': 'Potongan daging/tempe/telur goreng rata-rata'},
+                {'Kategori': '🥗 Sayur',        'Tinggi Asumsi (cm)': 2.0,
+                 'Alasan': 'Sayuran cenderung pipih saat disajikan di piring'},
             ]
             st.dataframe(pd.DataFrame(tinggi_rows), use_container_width=True, hide_index=True)
             st.markdown("""
@@ -1094,7 +1035,7 @@ def run_analysis(image, conf_threshold, user_type, model):
         iou=IOU_THRESHOLD, verbose=False
     )
 
-    annotated, food_dets, minuman_dets, pixel_to_cm, plate_ok, circle_info = \
+    annotated, food_dets, minuman_dets, pixel_to_cm, plate_ok = \
         process_segmentation_results(image_rsz, results, conf_threshold)
 
     analysis = analyze_nutrition_balance(food_dets, user_type)
@@ -1105,7 +1046,6 @@ def run_analysis(image, conf_threshold, user_type, model):
         'minuman_dets':    minuman_dets,
         'pixel_to_cm':     pixel_to_cm,
         'plate_ok':        plate_ok,
-        'circle_info':     circle_info,        # ← baru
         'analysis':        analysis,
         'original_size':   (w, h),
         'resized':         max(w, h) > 1280,
@@ -1113,27 +1053,18 @@ def run_analysis(image, conf_threshold, user_type, model):
 
 
 def show_calibration_info(result):
-    plate_ok    = result['plate_ok']
-    circle_info = result.get('circle_info')
-    px_to_cm    = result['pixel_to_cm']
-
-    if plate_ok and circle_info:
-        cx, cy, r = circle_info
-        mm_per_px = px_to_cm * 10
-        st.success(
-            f"✅ **Piring terdeteksi (HCT)** — "
-            f"pusat ({cx}, {cy}) px · jari-jari {r} px · "
-            f"skala **{mm_per_px:.3f} mm/px** (Ø 22 cm referensi)"
-        )
+    if result['plate_ok']:
+        st.success("✅ Piring terdeteksi — estimasi ukuran porsi dihitung dari diameter piring 22 cm.")
     else:
         st.markdown("""
         <div style="background:#fff8e1;border:1.5px solid #ffcc02;border-left:4px solid #f59e0b;
                     border-radius:10px;padding:12px 16px;font-size:0.84rem;color:#5a3e00;margin:0.5rem 0;">
-            <strong>📐 Piring tidak terdeteksi HCT — estimasi fallback aktif</strong><br>
+            <strong>📐 Piring tidak terdeteksi otomatis — estimasi tetap berjalan</strong><br>
             Sistem mengasumsikan piring berdiameter <strong>22 cm</strong> memenuhi sekitar 70% area foto.<br>
             <span style="color:#7a5500;">
-            💡 <em>Agar estimasi lebih akurat: foto tepat dari atas, piring hampir memenuhi frame,
-            pencahayaan merata tanpa bayangan keras.</em>
+            💡 <em>Agar estimasi tetap akurat: foto dari tepat di atas piring dan posisikan piring
+            agar hampir memenuhi seluruh frame — seolah piring Anda adalah "bingkai" dari foto tersebut.
+            Hindari foto dari terlalu jauh.</em>
             </span>
         </div>
         """, unsafe_allow_html=True)
@@ -1161,13 +1092,15 @@ def main():
 
     # ── TAB UPLOAD ────────────────────────────────────────────────────────────
     with tab_upload:
-        _accepted = ['jpg', 'jpeg', 'png'] + (['heic', 'heif'] if _HEIC_SUPPORTED else [])
+        _fmt_label = "JPG, PNG, HEIC/HEIF (iPhone), WEBP, BMP, TIFF"
+        if not _HEIC_SUPPORTED:
+            _fmt_label = "JPG, PNG, WEBP, BMP, TIFF · *Install pillow-heif untuk HEIC*"
+
         uploaded = st.file_uploader(
             "Pilih foto piring makanan Anda",
-            type=_accepted,
+            type=None,
             label_visibility="collapsed",
-            help="Format didukung: JPG, PNG" + (", HEIC/HEIF (iPhone)" if _HEIC_SUPPORTED else
-                 " · Install pillow-heif untuk dukungan HEIC")
+            help=f"Format didukung: {_fmt_label}"
         )
 
         if uploaded:
