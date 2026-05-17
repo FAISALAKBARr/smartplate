@@ -6,8 +6,6 @@ scipy
 pillow
 pillow-heif
 gdown
-# opencv-python-headless harus di-install SEBELUM ultralytics
-# agar ultralytics tidak override dengan opencv-python (yang butuh libGL)
 opencv-python-headless
 ultralytics
 torch
