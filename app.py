@@ -96,7 +96,7 @@ st.markdown("""
 
 # ── Intro ─────────────────────────────────────────────────────────────────────
 st.markdown("""
-<p style="font-size:0.95rem;color:#444;max-width:760px;line-height:1.7;">
+<p style="font-size:0.95rem;color:inherit;opacity:0.82;max-width:760px;line-height:1.7;">
 SmartPlate adalah platform end-to-end untuk mendukung keseimbangan gizi masyarakat Indonesia.
 Dimulai dari <strong>deteksi dan analisis nutrisi makanan</strong> berbasis foto (Year 1),
 dilanjutkan dengan <strong>optimasi menu harian</strong> menggunakan algoritma komputasional (Year 2).
