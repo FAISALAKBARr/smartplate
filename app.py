@@ -107,14 +107,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── Intro ─────────────────────────────────────────────────────────────────────
-st.markdown("""
-<p class="intro-text">
-SmartPlate adalah platform end-to-end untuk mendukung keseimbangan gizi masyarakat Indonesia.
-Dimulai dari <strong>deteksi dan analisis nutrisi makanan</strong> berbasis foto (Year 1),
-dilanjutkan dengan <strong>optimasi menu harian</strong> menggunakan algoritma komputasional (Year 2).
-Navigasi ke halaman yang diinginkan melalui sidebar di sebelah kiri.
-</p>
-""", unsafe_allow_html=True)
+st.markdown(
+    "SmartPlate adalah platform end-to-end untuk mendukung keseimbangan gizi masyarakat Indonesia. "
+    "Dimulai dari **deteksi dan analisis nutrisi makanan** berbasis foto (Year 1), "
+    "dilanjutkan dengan **optimasi menu harian** menggunakan algoritma komputasional (Year 2). "
+    "Navigasi ke halaman yang diinginkan melalui sidebar di sebelah kiri."
+)
 
 # ── Flow banner ───────────────────────────────────────────────────────────────
 st.markdown("""
