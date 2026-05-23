@@ -218,7 +218,7 @@ TARGETS = {
 }
 CATEGORY_MIN_PORTIONS  = {'buah': 150, 'karbohidrat': 300, 'protein': 150, 'sayur': 200, 'minuman': 600}
 CATEGORY_MAX_PORTIONS  = {'buah': 400, 'karbohidrat': 500, 'protein': 300, 'sayur': 500, 'minuman': 900}
-MAX_BUDGET             = 20000
+MAX_BUDGET             = 50000
 MIN_PORTION_PER_FOOD   = 50
 MAX_ITEMS_PER_CATEGORY = {'buah': 3, 'karbohidrat': 2, 'protein': 3, 'sayur': 4, 'minuman': 2}
 STAPLE_FOOD_INDICES    = [10, 11]
