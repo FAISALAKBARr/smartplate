@@ -218,7 +218,7 @@ TARGETS = {
 }
 CATEGORY_MIN_PORTIONS  = {'buah': 150, 'karbohidrat': 300, 'protein': 150, 'sayur': 200, 'minuman': 600}
 CATEGORY_MAX_PORTIONS  = {'buah': 400, 'karbohidrat': 500, 'protein': 300, 'sayur': 500, 'minuman': 900}
-MAX_BUDGET             = 50000
+MAX_BUDGET             = 20000
 MIN_PORTION_PER_FOOD   = 50
 MAX_ITEMS_PER_CATEGORY = {'buah': 3, 'karbohidrat': 2, 'protein': 3, 'sayur': 4, 'minuman': 2}
 STAPLE_FOOD_INDICES    = [10, 11]
@@ -1033,7 +1033,7 @@ def build_sidebar():
         st.divider()
         st.markdown('<div class="sidebar-label">Referensi</div>', unsafe_allow_html=True)
         st.markdown("""<div style="font-size:0.72rem;color:#aaa;line-height:1.6;">
-        Permenkes No. 28/2019 · TKPI 2017 ·
+        Permenkes No. 28/2019 · Fatsecret ·
         Holland (1975) · Kennedy & Eberhart (1995) ·
         Kao & Zahara (2008) — Hybrid GA-PSO
         </div>""", unsafe_allow_html=True)
@@ -1450,7 +1450,7 @@ def main():
     <div class="sp-footer">
         <strong>SmartPlate Year 2</strong> — Optimasi Menu via Hybrid GA-PSO, GA, & PSO<br>
         © 2026 Mochamad Faisal Akbar · Kecerdasan Komputasional · Universitas Sebelas Maret<br>
-        <em>Permenkes No. 28/2019 · TKPI 2017 · Holland (1975) · Kennedy & Eberhart (1995) ·
+        <em>Permenkes No. 28/2019 · Fatsecret · Holland (1975) · Kennedy & Eberhart (1995) ·
         Kao & Zahara (2008) — Hybrid GA-PSO</em>
     </div>
     """, unsafe_allow_html=True)
