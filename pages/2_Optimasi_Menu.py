@@ -1383,7 +1383,7 @@ def tab_stats(ga_p, pso_p, hybrid_p, seed):
         (axes[1], ga['cost'], pso['cost'], hyb['cost'], 'Cost Distribution (Rp)', 'Rp'),
         (axes[2], ga['time'], pso['time'], hyb['time'], 'Time Distribution (s)',  'Seconds'),
     ]:
-        bp = ax.boxplot([arr_ga, arr_pso, arr_hyb], labels=['GA','PSO','Hybrid'],
+        bp = ax.boxplot([arr_ga, arr_pso, arr_hyb], tick_labels=['GA','PSO','Hybrid'],
                         patch_artist=True)
         for box, col in zip(bp['boxes'], colors):
             box.set_facecolor(col)
